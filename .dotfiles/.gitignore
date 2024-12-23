@@ -1,0 +1,14 @@
+ORIG_HEAD
+FETCH_HEAD
+description
+index
+COMMIT_EDITMSG
+config
+HEAD
+logs/*
+refs/*
+hooks/*
+branches/*
+info/*
+objects/*
+
