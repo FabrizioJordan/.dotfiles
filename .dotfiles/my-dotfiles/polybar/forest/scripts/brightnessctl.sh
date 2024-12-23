@@ -1,0 +1,36 @@
+#!/bin/bash
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+ORANGE='\033[0;33m'
+BLUE='\033[0;34m'
+CYAN="\033[0;36m"
+WHITE='\033[0;37m'
+NC='\033[0m' # no color
+
+
+
+BRIGHTNESS_VALUE=`brightnessctl | grep -o "(.*" | tr -d "()"`
+BRIGHTNESS_NR=${BRIGHTNESS_VALUE//%}
+
+if [ $BRIGHTNESS_NR -lt 21 ]; then
+	#BRIGHTNESS_ICON=${CYAN} ${NC}
+	BRIGHTNESS_ICON=
+elif [ $BRIGHTNESS_NR -lt 41 ]; then
+	#BRIGHTNESS_ICON=${CYAN} ${NC}
+	BRIGHTNESS_ICON=
+elif [ $BRIGHTNESS_NR -lt 61 ]; then
+	#BRIGHTNESS_ICON=${CYAN} ${NC}
+	BRIGHTNESS_ICON=
+elif [ $BRIGHTNESS_NR -lt 81 ]; then
+	#BRIGHTNESS_ICON=${CYAN} ${NC}
+	BRIGHTNESS_ICON=
+elif [ $BRIGHTNESS_NR -lt 101 ]; then
+	#BRIGHTNESS_ICON=${CYAN} ${NC}
+	BRIGHTNESS_ICON=
+else
+	BRIGHTNESS_ICON=
+fi
+
+
+echo "$BRIGHTNESS_ICON $BRIGHTNESS_VALUE"
+
