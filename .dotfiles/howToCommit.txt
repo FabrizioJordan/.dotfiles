@@ -1,0 +1,12 @@
+Cuidado: no se usa el comando git sino config, osea config push, config pull, config commit, config add.
+
+Para hacer commit:
+
+config add (añadir sólo los que uno quiera, no todos a menos que estes en ~/.dotfiles)
+
+config commit -m "Added polybar config. Modified polybar config."
+(hacer commits con nombres simples, deleted modified y added)
+
+"config push repo-remoto main"
+
+config push https://github.com/FabrizioJordan/dotfiles.git main
