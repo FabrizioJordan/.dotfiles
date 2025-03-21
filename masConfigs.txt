@@ -1,3 +1,7 @@
 Como usar dmoji ?
 Para usar dmoji hay que copiar el archivo a /usr/bin/  y luego utilizar ese archivo para ponerlo en el atajo de teclado.
 Generalmente uso "Super + ."
+
+
+Donde va "nanorc"?
+"Nanorc" va en ~/.nanorc, osea en la carpeta personal del usuario.
