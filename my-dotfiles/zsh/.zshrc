@@ -69,8 +69,6 @@ PATH=/root/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/
 
 # Custom Aliases
 
-#alias cursor='$HOME/cursor-0.43.6.AppImage'
-#alias frogmouth='$HOME/.local/bin/frogmouth'
 #alias killPolybar='pkill polybar'
 #alias usePolybar='sh $HOME/Config/polybarConfig.ini &'
 
@@ -79,7 +77,7 @@ PATH=/root/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/
 
 alias cp="cp -i"
 alias mv='mv -i'
-alias rm='sudo rm -r -i'
+alias rm='rm -r -i'
 
 
 alias ll='lsd -lhX --group-dirs=first'
@@ -101,7 +99,7 @@ alias eInit='sh $HOME/Scripts/DeInicio/Inicio.sh'
 
 alias install='sudo apt install'
 alias uninstall='sudo apt purge'
-alias actualizar='sudo apt update && sudo apt dist-upgrade -y'
+alias update='sudo apt update && sudo apt dist-upgrade -y'
 
 alias vim='nvim'
 alias cl='sh $HOME/Scripts/Otros/MyClear.sh'
