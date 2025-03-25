@@ -19,7 +19,7 @@
 ## Automatically indent a newly created line to the same number of
 ## tabs and/or spaces as the preceding line -- or as the next line
 ## if the preceding line is the beginning of a paragraph.
-set autoindent
+# set autoindent
 
 ## Back up files to the current filename plus a tilde.
 # set backup
@@ -45,7 +45,7 @@ set autoindent
 # set casesensitive
 
 ## Constantly display the cursor position in the status bar or minibar.
-set constantshow
+# set constantshow
 
 ## Use cut-from-cursor-to-end-of-line by default.
 # set cutfromcursor
@@ -150,7 +150,7 @@ set locking
 ## Put the cursor on the highlighted item in the file browser, and
 ## show the cursor in the help viewer; useful for people who use a
 ## braille display and people with poor vision.
-#set showcursor
+# set showcursor
 
 ## Make the Home key smarter: when Home is pressed anywhere but at the
 ## very beginning of non-whitespace characters on a line, the cursor
@@ -298,14 +298,23 @@ include "/usr/share/nano/*.nanorc"
 ## If you would like nano to have keybindings that are more "usual",
 ## such as ^O for Open, ^F for Find, ^H for Help, and ^Q for Quit,
 ## then uncomment these:
+
 #bind ^X cut main
 #bind ^C copy main
+#bind M-C copy main
+
 #bind ^V paste all
 #bind ^Q exit all
-#bind ^S savefile main
+#bind ^S savefile all
 #bind ^W writeout main
 #bind ^O insert main
+
+#bind Z
+#unbind M-C all
+
+
 #set multibuffer
+
 #bind ^H help all
 #bind ^H exit help
 #bind ^F whereis all
@@ -313,11 +322,13 @@ include "/usr/share/nano/*.nanorc"
 #bind ^B wherewas all
 #bind ^D findprevious all
 #bind ^R replace main
+
 #unbind ^U all
 #unbind ^N main
 #unbind ^Y all
 #unbind M-J main
 #unbind M-T main
+
 #bind ^A mark main
 #bind ^P location main
 #bind ^T gotoline main
@@ -333,39 +344,72 @@ include "/usr/share/nano/*.nanorc"
 
 
 
-### mis bindeos
+# Mis bindeos
 
-bind ^H help all
-bind ^H exit help
 
-bind ^D exit all
+#bind ^H help all
 
-bind ^F whereis all
-bind ^X cut main
-bind ^C copy main
-bind ^V paste all
+bind M-K comment main
+
 bind ^Z undo main
 bind ^Y redo main
 
 
+bind ^S savefile all
+bind ^Q exit all
 
 
-### mis unbindeos
+# copiar, pegar y demás
+
+bind ^C copy main
+bind M-C copy all
+#bind Sh-M-C "{execute}| xsel -ib {enter}{undo}" main
+
+bind ^V paste main
+
+bind ^X cut main
 
 
-unbind ^W all
-unbind M-U main
-unbind M-E main
-unbind ^L main
-unbind ^G all
+# solo sobre el buscador
 
-unbind ^^ all
-unbind ^B all
+bind ^F whereis all
+bind ^G findnext all
+bind ^D findprevious all
 
-#quitar lo de copiar en base a marcas:
-unbind M-A all
-unbind M-6 all
-#-----
+bind ^C cancel search
 
 
-unbind M-T all
+
+
+# Siempre se debe tener estos bindeos
+
+bind ^C cancel yesno
+
+# Otros que no son obligatorios pero son recomendados
+
+
+# Otros
+
+
+# unbind
+#unbind M-F all
+unbind ^D all
+
+
+unbind ^G main
+#unbind ^ main
+
+unbind ^\ all
+unbind M-R all
+
+unbind F11 all
+
+# poner marca
+unbind M-A main
+#bind ^6 noop all
+
+
+#anterior - siguiente
+unbind M-Q all
+unbind M-W all
+
